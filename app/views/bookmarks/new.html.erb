@@ -4,3 +4,6 @@
   <%= f.input :comment %>
   <%= f.submit "add a bookmark" %>
 <% end %>
+
+<%= link_to 'Back to list', lists_path %>
+<%= link_to 'Back to home', list_path(@list) %>

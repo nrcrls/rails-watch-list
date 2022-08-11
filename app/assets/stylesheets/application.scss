@@ -10,3 +10,18 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+.container-index {
+  background-color: aquamarine;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.card-category {
+  background-color: red;
+  margin: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}

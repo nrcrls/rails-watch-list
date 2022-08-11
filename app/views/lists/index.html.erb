@@ -1,7 +1,14 @@
-<h1>Lists</h1>
+<div class="container-index">
+  <h1>Lists</h1>
+  <div class="card-index">
+    <% @lists.each do |list| %>
+      <%= link_to list.name, list_path(list) %>
+      <%= link_to 'Delete list',
+      list_path(list),
+      data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }
+      %>
+    <% end %>
+  <div>
 
-<% @lists.each do |list| %>
-  <%= link_to list.name, list_path(list) %>
-<% end %>
-
-<%= link_to 'Add list', new_list_path %>
+  <%= link_to 'Add list', new_list_path %>
+</div>
