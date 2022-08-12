@@ -1,17 +1,19 @@
 <div class="container-index">
-  <h1>Lists</h1>
-  <%= link_to 'Add list', new_list_path %>
+  <div class="header">
+    <h1>Lists</h1>
+    <%= link_to 'Add list', new_list_path %>
+  </div>
 
   <div class="card-index">
     <% @lists.each do |list| %>
       <div class="item card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQDYau3Hs4-xw1i8jVSUY4BlF4FLmg8lQqg&usqp=CAU' %>)">
-      <%= link_to list.name, list_path(list) %>
-      <%= link_to 'Delete list',
-      list_path(list),
-      data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }
-      %>
+        <%= link_to list.name, list_path(list) %>
+        <%= link_to 'Delete list',
+          list_path(list),
+          data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }
+        %>
       </div>
     <% end %>
-  <div>
+  </div>
 
 </div>
